@@ -4,7 +4,7 @@ import adapterStatic from '@sveltejs/adapter-static';
 
 //? Change when building site.
 //!=================================
-const buildingForGitHubPages = true;
+const buildingForGitHubPages = false;
 //!=================================
 
 /** @type {import('@sveltejs/kit').Config} */
