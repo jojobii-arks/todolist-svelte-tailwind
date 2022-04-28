@@ -26,7 +26,7 @@ if (buildingForGitHubPages) {
     assets: 'docs',
   });
   config.kit.paths = {
-    base: '/svelte-tailwind'
+    base: '/todolist-svelte-tailwind'
   };
   config.kit.prerender = {
     default: true
