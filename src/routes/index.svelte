@@ -1,6 +1,7 @@
 <script>
   import Form from './Form.svelte';
-
+	import { data, addEntry } from './data'
+	console.log($data, addEntry);
 </script>
 
 <div class="h-screen grid justify-center items-center bg-rose-200">
