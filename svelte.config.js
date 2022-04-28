@@ -4,7 +4,7 @@ import adapterStatic from '@sveltejs/adapter-static';
 
 //? Change when building site.
 //!=================================
-const buildingForGitHubPages = false;
+const buildingForGitHubPages = true;
 //!=================================
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -12,7 +12,6 @@ const config = {
 	kit: {
 		adapter: adapter()
 	},
-
 	preprocess: [
 		preprocess({
 			postcss: true
@@ -31,7 +30,7 @@ if (buildingForGitHubPages) {
   };
   config.kit.prerender = {
     default: true
-  }
+  };
 }
 
 export default config;

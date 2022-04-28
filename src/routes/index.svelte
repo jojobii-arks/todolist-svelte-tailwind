@@ -1,9 +1,9 @@
 <script>
   import Modal from '../components/Modal.svelte';
 	import { viewModal, editing } from '../components/ModalData';
-  import Entry from './Entry.svelte';
+  import Entry from '../components/Entry.svelte';
   import Form from '../components/Form.svelte';
-	import { data, addEntry, removeEntry } from '../stores/data'
+	import { data } from '../stores/data'
 	$: console.log($data);
 
 	function startEditing(entryId) {

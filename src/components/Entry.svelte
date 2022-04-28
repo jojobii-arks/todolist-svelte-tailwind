@@ -1,6 +1,5 @@
 <script>
-	import { viewModal } from '../components/ModalData';
-	import { data, addEntry, removeEntry } from '../stores/data'
+	import { removeEntry } from '../stores/data'
 	export let todo;
 
 	import { createEventDispatcher } from 'svelte';
