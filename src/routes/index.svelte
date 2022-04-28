@@ -4,7 +4,6 @@
   import Entry from '../components/Entry.svelte';
   import Form from '../components/Form.svelte';
 	import { data } from '../stores/data'
-	$: console.log($data);
 
 	function startEditing(entryId) {
 		editing.set($data.find(e => e.id === entryId));
