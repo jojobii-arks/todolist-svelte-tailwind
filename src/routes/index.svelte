@@ -1,14 +1,29 @@
 <script>
-  import Form from './Form.svelte';
-	import { data, addEntry } from './data'
-	console.log($data, addEntry);
+  import Modal from '../components/Modal.svelte';
+	import { viewModal, editing } from '../components/ModalData';
+  import Entry from './Entry.svelte';
+  import Form from '../components/Form.svelte';
+	import { data, addEntry, removeEntry } from '../stores/data'
+	$: console.log($data);
+
+	function startEditing(entryId) {
+		editing.set($data.find(e => e.id === entryId));
+		viewModal(true);
+	};
+
 </script>
 
-<div class="h-screen grid justify-center items-center bg-rose-200">
 
-	<div class="bg-gray-50 rounded-xl p-6 grid grid-flow-row w-96 gap-4">
+<Modal />
+
+<div class="h-screen flex justify-center items-center">
+	<div class="bg-gray-50 rounded-xl p-6 grid grid-flow-row w-[90%] max-w-xl gap-4">
 		<h1 class="text-4xl font-bold text-center">Todo List</h1>
+		<ul class="grid grid-flow-row gap-2">
+			{#each $data as todo}
+				<Entry {todo} on:edit={e => { startEditing(e.detail) }} />
+			{/each}
+		</ul>
 		<Form />
 	</div>
-
 </div>
